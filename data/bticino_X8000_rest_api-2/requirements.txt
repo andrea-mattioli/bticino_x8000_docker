@@ -1,0 +1,6 @@
+Flask==1.1.1
+requests==2.23.0
+PyYAML==5.3
+apscheduler==3.6.3
+paho-mqtt==1.5.0
+Flask-HTTPAuth==3.3.0

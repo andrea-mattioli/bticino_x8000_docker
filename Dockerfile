@@ -2,7 +2,7 @@ ARG ARCH=
 FROM alpine
 
 LABEL maintainer="andrea.mattiols@gmail.com"
-LABEL version="0.2"
+LABEL version="2.1"
 LABEL description="This is custom Docker Image for \
 the Bticino X8000 Smarter API"
 
@@ -15,11 +15,7 @@ RUN apk add --no-cache \
         tzdata \
         python3 \
         py3-pip \
-        mosquitto-clients \
-        openssl \
-        nginx \
-        certbot \
-        certbot-nginx
+        mosquitto-clients
 
 COPY run.sh /hassio_bticino_smarter/
 COPY data/nginx.conf* /etc/nginx/

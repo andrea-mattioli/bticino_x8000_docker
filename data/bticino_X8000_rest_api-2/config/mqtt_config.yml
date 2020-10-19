@@ -1,0 +1,8 @@
+mqtt_config:
+    mqtt_broker: "mqtt ip"
+    mqtt_port: "mqtt broker port: example 1883" 
+    mqtt_user: "my mqtt broker user"
+    mqtt_pass: "my mqtt broker password"
+    mqtt_interval: "interval time in minute to get value (legrand accept max 500 query/day), example: 3"
+    mqtt_cmd_topic: "example: /bticino/thermostat/cmd"
+    mqtt_state_topic: "example: /bticino/thermostat/status"

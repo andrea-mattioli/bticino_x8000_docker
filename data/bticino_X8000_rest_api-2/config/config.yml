@@ -1,0 +1,8 @@
+api_config:
+    client_id: "Recived via mail" 
+    client_secret: "Recived via mail" 
+    subscription_key: "Your Subscription Key" 
+    redirect_url: "Your VALID Redirect Url"
+    api_user: "Chose your api user"
+    api_pass: "Chose your api password"
+    subscribe_c2c: "True|False Use to receive thermostat status from Legrand (Safe 500 query/day)" 
