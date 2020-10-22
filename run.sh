@@ -9,8 +9,6 @@ echo ${DOMAIN}
 echo ${HAIP}
 echo ${MQTT_BROKER}
 echo ${MQTT_PORT}
-echo ${MQTT_USER}
-echo ${MQTT_PASS}
 
 echo "Setup config file..."
 # Setup config
@@ -20,8 +18,7 @@ api_config:
     client_secret: <bticino>${CLIENT_SECRET}<bticino>
     subscription_key: ${SUBSCRIPTION_KEY}
     domain: ${DOMAIN}
-	haip: ${HAIP}
-    use_ssl: ${SSL_ENABLE}
+    haip: ${HAIP}
 EOF
 cat << EOF > config/mqtt_config.yml
 mqtt_config:
@@ -31,10 +28,12 @@ mqtt_config:
     mqtt_pass: ${MQTT_PASS}
 EOF
 # Start API
+echo "Start Api"
 python3 bticino.py & > /dev/null
 API_PID+=($!)
 # Start MQTT
 sleep 3
+echo "Start MQTT Client"
 python3 mqtt.py & > /dev/null
 API_PID+=($!)
 function stop_api() {
