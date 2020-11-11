@@ -1,15 +1,6 @@
 ARG ARCH=
 FROM alpine
 ENV TZ=Europe/Rome
-ENV CLIENT_ID="recived via email"
-ENV CLIENT_SECRET="recived via email"
-ENV SUBSCRIPTION_KEY="subscription primary key"
-ENV DOMAIN="my home domain example.com"
-ENV MQTT_BROKER="ip broker"
-ENV MQTT_PORT=1883
-ENV MQTT_USER="your mqtt user"
-ENV MQTT_PASS="your mqtt password"
-ENV HAIP="your local haip"
 LABEL maintainer="andrea.mattiols@gmail.com"
 LABEL version="2.1"
 LABEL description="This is custom Docker Image for \
