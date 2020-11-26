@@ -25,7 +25,6 @@ RUN apk add --no-cache \
   && mv bticino_X8000_rest_api/* /hassio_bticino_smarter/ \
   && rm -rf bticino_X8000_rest_api/
 
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 COPY run.sh /hassio_bticino_smarter/
 
 RUN chmod a+x /hassio_bticino_smarter/run.sh
