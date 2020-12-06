@@ -9,7 +9,16 @@ echo ${DOMAIN}
 echo ${HAIP}
 echo ${MQTT_BROKER}
 echo ${MQTT_PORT}
-
+JSON_FILE="/config/.bticino_smarter/smarter.json"
+#Check smarter file
+if [ -s "$JSON_FILE" ] 
+then
+	echo "Smarter file already exist and contain some data."
+else
+	echo "Init Smarter file ..."
+    mkdir -p /config/.bticino_smarter/
+    mv config/smarter.json /config/.bticino_smarter/smarter.json
+fi
 echo "Setup config file..."
 # Setup config
 cat << EOF > config/config.yml

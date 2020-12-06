@@ -1,11 +1,7 @@
-ARG BASE=
-FROM ${BASE} AS my_repo
 FROM alpine:latest
-COPY --from=my_repo /faketime.so /lib/faketime.so
-ENV LD_PRELOAD=/lib/faketime.so
 ENV LANG C.UTF-8
 LABEL maintainer="andrea.mattiols@gmail.com"
-LABEL version="2.2"
+LABEL version="2.3"
 LABEL description="This is custom Docker Image for \
 the Bticino X8000 Smarter API"
 
