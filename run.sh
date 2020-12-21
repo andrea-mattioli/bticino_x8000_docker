@@ -17,7 +17,7 @@ then
 else
 	echo "Init Smarter file ..."
     mkdir -p /config/.bticino_smarter/
-    mv config/smarter.json /config/.bticino_smarter/smarter.json
+    cp config/smarter.json /config/.bticino_smarter/smarter.json
 fi
 echo "Setup config file..."
 # Setup config
