@@ -1,7 +1,7 @@
 FROM alpine:latest
 ENV LANG C.UTF-8
 LABEL maintainer="andrea.mattiols@gmail.com"
-LABEL version="2.3"
+LABEL version="2.4"
 LABEL description="This is custom Docker Image for \
 the Bticino X8000 Smarter API"
 
