@@ -2,7 +2,7 @@ ARG ARCH=
 FROM alpine
 
 LABEL maintainer="andrea.mattiols@gmail.com"
-LABEL version="0.2"
+LABEL version="0.3"
 LABEL description="This is custom Docker Image for \
 the Bticino X8000 Smarter API"
 
