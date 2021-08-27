@@ -40,19 +40,38 @@ First Reply Url = https://myDomain:5588/callback
 
 ## 2. CONFIGURATION
 
-### 2.1. Set Docker ENV Variable
+### 2.1. Start Docker Container
+
+Update the bash script variable with your correct data:
 ```
-CLIENT_ID: recived via email
-CLIENT_SECRET: recived via email
-SUBSCRIPTION_KEY: subscription key
-DOMAIN: my home domain example.com
-API_USER: chose your api user
-API_PASS: chose your api password
-MQTT_BROKER: ip broker
-MQTT_PORT: 'mqtt broker port default:1883'
-MQTT_USER: your mqtt user
-MQTT_PASS: your mqtt password
-USE_SSL: 'True|False {False} for nginx proxy manager'
+#! /bin/bash
+ARCH=$(uname -m)
+## edit variable with your value
+CLIENT_ID="recived via email"
+CLIENT_SECRET="recived via email"
+SUBSCRIPTION_KEY="subscription key"
+DOMAIN="my home domain example.com"
+API_USER="chose your api user"
+API_PASS="chose your api password"
+MQTT_BROKER="ip broker"
+MQTT_PORT=1883
+MQTT_USER="your mqtt user"
+MQTT_PASS="your mqtt password"
+USE_SSL="True/False"
+### start container
+docker run -t -i -e TZ='Europe/Rome' \
+-e CLIENT_ID='${CLIENT_ID}' \
+-e CLIENT_SECRET='${CLIENT_SECRET}' \
+-e SUBSCRIPTION_KEY='${SUBSCRIPTION_KEY}' \
+-e DOMAIN='${DOMAIN}' \
+-e HAIP='${HAIP}' \
+-e MQTT_BROKER='${MQTT_BROKER}' \
+-e MQTT_PORT='1883' \
+-e MQTT_USER='${MQTT_USER}' \
+-e MQTT_PASS='${MQTT_PASS}' \
+-e USE_SSL='${USE_SSL}' \
+-p 5588:5588 \
+--name ha_bticino_x_8000 amattioli2/homeassistant_addon_bticino_x_8000:${ARCH}
 ```
 ### 2.2. Nat API port: "80,5588" on your router/firewall 
 If you use "use_ssl: true" and you have already a valid ssl certificate installed in your hassio env, you can open only 5588 on your router, but if you want a new certificate you must open http port 80!
