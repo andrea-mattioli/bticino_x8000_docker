@@ -15,6 +15,7 @@ RUN apk add --no-cache \
         python3 \
         py3-pip \
         git \
+        gcc \
         mosquitto-clients \
         libressl-dev \
         musl-dev \
