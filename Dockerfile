@@ -1,6 +1,5 @@
 FROM alpine:latest
 ENV LANG C.UTF-8
-ENV CRYPTOGRAPHY_DONT_BUILD_RUST=1
 LABEL maintainer="andrea.mattiols@gmail.com"
 LABEL version="2.5"
 LABEL description="This is custom Docker Image for \
@@ -21,7 +20,8 @@ RUN apk add --no-cache \
         libressl-dev \
         musl-dev \
         libffi-dev \
-        python3-dev \        
+        python3-dev \
+        cargo \
     \
   && git clone -b v2 https://github.com/andrea-mattioli/bticino_X8000_rest_api.git \
   && mv bticino_X8000_rest_api/* /hassio_bticino_smarter/ \
