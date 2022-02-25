@@ -1,5 +1,6 @@
 FROM alpine:latest
 ENV LANG C.UTF-8
+ENV CRYPTOGRAPHY_DONT_BUILD_RUST=1
 LABEL maintainer="andrea.mattiols@gmail.com"
 LABEL version="2.5"
 LABEL description="This is custom Docker Image for \
